@@ -16,14 +16,15 @@ header {
   padding: 2px; }
   header form {
     margin: 0 auto;
-    width: 50%;
-    display: flex;
+    width: 70%;
     border: 1px solid; }
     header form input,
     header form textarea,
     header form button {
       display: block;
-      border: 1px solid; }
+      border: 1px solid;
+      font-size: 1.5rem;
+      padding: 2vmin; }
     header form input,
     header form textarea {
       width: 100%; }
@@ -44,3 +45,24 @@ header {
 .columns {
   display: flex;
   flex-direction: row; }
+
+.bookmarks .bookmark {
+  padding: 1rem;
+  border: 1px solid;
+  background-color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  list-style: none;
+  position: relative;
+  width: 50%;
+  margin: 0 auto; }
+  .bookmarks .bookmark a {
+    color: #000;
+    text-decoration: none; }
+  .bookmarks .bookmark .remove {
+    border-radius: 50%;
+    border: 1px solid;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1%;
+    left: 97.5%; }
