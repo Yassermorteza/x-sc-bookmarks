@@ -1,4 +1,3 @@
-var saveBtn = document.querySelector('.save');
 var ul = document.querySelector('.bookmarks');
 var form = document.querySelector('form');
 
@@ -7,32 +6,32 @@ form.addEventListener('submit', function(e) {
     var val = this.link.value;
     var text = this.notes.value;
     localStorage.setItem(val, text);
-    // localStorage.setItem('text', text);
     this.reset();
     display();
 });
 
 var display = function() {
-    // var link = localStorage.link;
-    // var note = localStorage.getItem('text');
-    var keys = Object.keys(localStorage);
-    var values = Object.values(localStorage);
+    var keys = Object.keys(localStorage),
+        values = Object.values(localStorage);
     var outPut = keys.map(function(el, i) {
-        var key = keys[i];
-        var value = values[i];
+        var key = keys[i],
+            value = values[i];
         return `<li class="bookmark">
-                      <div>
-                        <a href="${key}" target='_blank'>${key}</a>
-                        <p>${value}</p>
-                      </div>
-                      <button class="remove">X</button>
-                    </li> `;
+                 <div>
+                   <a href="${key}" target="_blank">${key}</a>
+                   <p>${value}</p>
+                 </div>
+                 <button class="remove">X</button>
+                </li>`;
     }).join('');
     ul.innerHTML = outPut;
 
-    document.querySelectorAll('.remove').forEach(function(btn) {
+    var remove = document.querySelectorAll('.remove');
+    var list = document.querySelectorAll('.bookmark');
+    remove.forEach(function(btn, i) {
         btn.addEventListener('click', function() {
-            btn.parentNode.parentNode.textContent = '';
+            ul.removeChild(list[i]);
+            localStorage.removeItem(keys[i]);
         });
     });
 }

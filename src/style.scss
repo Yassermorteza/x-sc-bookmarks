@@ -11,6 +11,7 @@ body {
     height: 100%;
     font-family: sans-serif;
     background-color: #aaa;
+    position:relative;
 }
 
 header{
@@ -66,6 +67,7 @@ header{
     position: relative;
     width: 50%;
     margin: 0 auto;
+    margin-top: 2%;
     a{
       color: #000;
       text-decoration: none;
@@ -74,7 +76,7 @@ header{
       border-radius: 50%;
       border: 1px solid;
       font-size: 1.5rem;
-      position: absolute;
+      position: relative;
       top: 1%;
       left: 97.5%;
     }
